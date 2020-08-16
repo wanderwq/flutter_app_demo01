@@ -21,6 +21,8 @@ class _MovieListState extends State<MovieList> {
   var mlist = [];
   var total=0;
 
+
+
   @override
   void initState() {
     // TODO: implement initState
