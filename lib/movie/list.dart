@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import './detail.dart';
 
 Dio dio = new Dio();
 
@@ -40,7 +41,15 @@ class _MovieListState extends State<MovieList> {
          var mitem= mlist[i];
 //         return Text(mitem['title']);R
           //列
-         return Container(
+         return GestureDetector(onTap: (){
+           //路由  跳转详情
+           Navigator.push(context, MaterialPageRoute(builder: (BuildContext ctx){
+             //返回页面
+              return new MovieDetail(
+                  id:mitem['id'] ,
+                  title:mitem['title']);
+           }))   ;
+         },child: Container(
            height: 200,
            decoration: BoxDecoration(color: Colors.white,border: Border(top: BorderSide(color: Colors.black12))),
            child: Row(children: [
@@ -60,10 +69,8 @@ class _MovieListState extends State<MovieList> {
                  ],),
              )
            ],),
-         );
-
+         ),);
         });
-//    return Text("列表----+" + widget.mt+"------${mlist.length}");
   }
 
   getMoviList() async{

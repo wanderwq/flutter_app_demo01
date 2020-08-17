@@ -28,7 +28,8 @@ class MyHome extends StatelessWidget{
         length:3,
         child:
         Scaffold(
-          appBar: AppBar(        title: Text("电影列表"),
+          appBar: AppBar(
+            title: Text("电影列表"),
             centerTitle:true,
             actions: <Widget>[
               IconButton(
